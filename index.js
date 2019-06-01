@@ -48,6 +48,11 @@ class Passenger {
     drivers() {
         return this.trips().map(trip => trip.driver());
         // iterate through this passengers trips and return an array of the drivers for each trip
+        // passengers() {
+        //     return store.passengers.find(passenger => {
+        //       return passenger.id === this.passengerId;
+        //     });
+        // }
     };
 }
 
@@ -64,10 +69,9 @@ class Trip {
     };
 
     passenger() {
-        return store.passengers.find(
-            function (passenger) {
+        return store.passengers.find( passenger => {
                 return passenger.id === this.passengerId
-            }.bind(this)
+            }
         );
 
     };
